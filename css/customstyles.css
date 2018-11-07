@@ -1,0 +1,188 @@
+/*********Color Palette*********
+Maroon:   		#780000
+Yellow: 		#EEB111
+White: 			#FFFFFF
+Lt. Beige:		#ECEDD7	
+Drk. Beige:		#D8D9AD
+*******************************/
+
+body {
+    text-shadow: -2px 2px 8px #DDD;
+}
+
+.btn.btn-default {
+    color: black;
+    font-weight: 600;
+    background: #DF9D0F;
+    text-shadow: none;
+    border: 1px solid #EEB111;
+    box-shadow: 0 0 10px #DDD;
+}
+
+.btn.btn-default:hover {
+    color: white;
+    font-weight: 600;
+    background: #780000;
+    text-shadow: none;
+    border: 1px solid #780000;
+}
+
+.btn.btn-default a {
+    color: black;
+    text-decoration: none;
+}
+
+.btn.btn-default a:hover {
+    color: white;
+}
+
+.container {
+    margin:0 5 0 10%;
+}
+
+.container-login {
+    max-width: 600px;
+}
+
+form {
+    margin-top: 26px;
+}
+
+form button {
+    margin-top: 10px;
+    clear: left;
+    float: left;
+    margin-left: 30%;
+    padding-right: 30px;
+}
+
+/*
+form input  {
+clear: right;
+display: inline-block;
+float: left;
+margin-bottom: 10px;
+margin-top: 10px;
+width: 250px;
+}
+*/
+
+label {
+    float: left;
+    text-align: center;
+}
+
+.quizEditInput {
+    width: 100%;
+}
+
+/*preQuiz*/
+input[type=radio] {
+    margin-right: 1%;
+}
+
+.jumbotron {
+    background: #D8D9AD;
+    padding: 0px;
+    width: 100%;
+    height: auto; 
+    box-shadow: 0 0 10px grey;
+}
+
+.jumbotron a {
+    float: right; 
+    clear: both;
+}
+
+.jumbotron img {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.jumbotron p {
+    float: right;
+    padding-top: 5%;
+}
+
+.panel-body {
+    box-shadow: 0 0 10px grey;
+}
+.panel-body h3 {
+    clear: both;
+}
+
+.panel-body h4{
+    clear: both;
+}
+
+/* results.php only*/
+.panel-results {
+    height: auto;
+}
+
+/*
+.panel-body input {
+
+float: left;
+clear: left;
+
+text-align: left;
+margin: 5px 5px 5px 0px;
+}
+*/
+.panel-heading {
+    background: red;
+}
+
+.panel.panel-default {
+    margin-top: 20px;
+}
+
+.quizResultsWrapper {
+    margin-top: 60px;
+}
+
+#quizResults {
+    margin-top: 60px;
+}
+
+.required {
+    color: red;
+    padding-left: 5px;
+    font-style: italic;
+}
+
+.studentInfo {
+    display: block;
+    float: left;
+}
+
+#startButton {
+    margin-top: 1%;
+}
+
+#quizEditButton {
+    margin-left: 2em;    
+}
+
+.quizUpdateButton {
+    margin-top: 1em;
+}
+
+.successMessage {
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: green;
+}
+
+.failMessage {
+    display: block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: red;
+}

@@ -1,0 +1,54 @@
+/*********Color Palette*********
+Maroon:   		#780000
+Yellow: 		#EEB111
+White: 			#FFFFFF
+Lt. Beige:		#ECEDD7	
+Drk. Beige:		#D8D9AD
+*******************************/
+.container {
+	margin:0 5 0 10%;
+}
+
+.btn.btn-default {
+	color: black;
+	font-weight: 600;
+	background: #DF9D0F;
+	text-shadow: none;
+	border: 1px solid #EEB111;
+	}
+.btn.btn-default:hover {
+	color: white;
+	font-weight: 600;
+	background: #780000;
+	text-shadow: none;
+	border: 1px solid #780000;
+	}
+
+.jumbotron {
+	background: #D8D9AD;
+	padding: 0 50 10 0;
+	width: 100%;
+	height: auto; 
+}
+
+.jumbotron img {
+    padding-top: 10px;
+}
+
+.panel-body input {
+	
+	float: left;
+    clear: left;
+    width: 500px;
+    text-align: left;
+    margin: 10px 10px 10px 25%;
+}
+
+.panel-body h4{
+	
+	padding: 20px 10px 10px 25%;
+	clear: both;
+}
+.panel.panel-default {
+	margin-top: 20px;
+}

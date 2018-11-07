@@ -1,0 +1,39 @@
+/*********Color Palette*********
+Maroon:   		#780000
+Yellow: 		#EEB111
+White: 			#FFFFFF
+Lt. Beige:		#ECEDD7	
+Drk. Beige:		#D8D9AD
+*******************************/
+.container {
+	margin:0 5 0 10%;
+}
+
+#quizResults {
+	margin-top: 60px;
+}
+
+.jumbotron {
+	background: #D8D9AD;
+	padding: 0px;
+	width: 100%;
+	height: auto; 
+}
+
+.jumbotron img {
+    padding-top: 30px;
+	}
+
+.btn.btn-default:hover {
+	background: #780000;
+	color: #FFFFFF; 
+	}
+
+.btn.btn-default {
+	color: black;
+	font-weight: 600;
+	background: #EEB111;
+	text-shadow: none;
+	border: 1px solid #780000;
+	}
+

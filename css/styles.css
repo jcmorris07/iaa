@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* Interest Assessment Stylesheet */
+
+/*********Color Palette*********
+Maroon:   		#780000
+Yellow: 		#EEB111
+White: 			#FFFFFF
+Lt. Beige:		#ECEDD7	
+Drk. Beige:		#D8D9AD
+*******************************/
+
+.maroon {
+	display: inline-block;
+    width: 80px;
+	height: 80px;
+    padding: 20px;
+	margin: 10px 20px 20px 20px;
+    background-color: #780000;
+    
+}
+.yellow {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+    padding: 20px;
+	margin: 10px 20px 20px 20px;
+    background-color: #EEB111;
+    
+}
+.ltbeige {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+    padding: 20px;
+	margin: 10px 20px 20px 20px;
+    background-color: #ECEDD7;
+}
+.drkbeige {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+    padding: 20px;
+	margin: 10px 20px 20px 20px;
+    background-color: #D8D9AD;
+}
