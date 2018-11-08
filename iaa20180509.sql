@@ -18,6 +18,19 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Create DB & user logic added 11/8/2018 by jwokersien
+--
+
+DROP DATABASE IF EXISTS iaa;
+CREATE DATABASE iaa;
+
+CREATE USER 'iaa_user'@'localhost' IDENTIFIED BY 'Fall2018.';
+USE iaa;
+GRANT ALL PRIVILEGES ON *.* to 'iaa_user'@'localhost';
+
+-- end of Jenny's edits
+
+--
 -- Table structure for table `answers`
 --
 

@@ -1,7 +1,7 @@
 <?php
             $serverName = "172.22.0.12";
             $userName = "iaa_user";
-            $passWord = 'Apin1402EagleFlight.';
+            $passWord = 'Fall2018.';
             $dbName = "iaa";
 
             $conn = new mysqli($serverName, $userName, $passWord, $dbName);
