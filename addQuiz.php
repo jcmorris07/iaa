@@ -90,7 +90,7 @@
 				// check for duplicate Quiz Name
 				if (mysqli_num_rows($result) > 0) {
 					while($row = mysqli_fetch_assoc($result)) {
-						if($quizName == $row[quizName]) {
+						if($quizName == $row['quizName']) {
 							$duplicate = true;
 						} else {
 						}
@@ -112,7 +112,7 @@
 						$result =  mysqli_query($conn, $sql);
 						if  (mysqli_num_rows($result) > 0) {
 							while($row = mysqli_fetch_assoc($result)) {
-								$quizID = $row[quizID];
+								$quizID = $row['quizID'];
 							}
 							header("location: addQuestion.php?qid=$quizID");
 						}

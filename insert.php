@@ -9,7 +9,7 @@ $percentCorrect = 0;
 
 // Set up selectedAnswer variables for however many questions there are.
 while ($i <= $numOfQuestions) {
-    ${selectedAnswer . $i} = intval($_POST['answer' . $i]);
+    ${'selectedAnswer' . $i} = intval($_POST['answer' . $i]);
     $i++;
 }
 
@@ -25,7 +25,7 @@ while ($i <= $numOfQuestions) {
     $sql = "SELECT * 
                         FROM answers
                         WHERE isCorrect = 1 
-                        AND answerID = " . ${selectedAnswer . $i};
+                        AND answerID = " . ${'selectedAnswer' . $i};
 
     $result = mysqli_query($conn, $sql);
 
@@ -73,7 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     "<input type='hidden' name='studentFName' value='" . $studentFName . "'>",
     "<input type='hidden' name='studentLName' value='" . $studentLName . "'>",
     "<input type='hidden' name='studentID' value='" . $studentID . "'>",
-    "<input type='hidden' name='percentCorrect' value='" . $percentCorrect . "'>";
+    "<input type='hidden' name='percentCorrect' value='" . $percentCorrect . "'>",
+    "<input type='hidden' name='studentEmail' value='" . $email . "'>";
     ?>
     <noscript><input class="btn btn-default" name="submit" type="submit" value="Confirm Assesment Submission"></noscript>
 </form>

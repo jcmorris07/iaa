@@ -80,7 +80,8 @@
                             <input class="form-control" type="password" name="password"></input><br>
                             <label class="col-2 col-form-label">Confirm New Password:</label>&nbsp;&nbsp;&nbsp;
                             <input class="form-control" type="password" name="cPassword"></input><br>
-                            <button type="submit" name="submit" class="btn btn-default">Submit</button>                        </form>
+                            <button type="submit" name="submit" class="btn btn-default">Submit</button>
+                          </form>
                     </div>
                 </div>
             </div>

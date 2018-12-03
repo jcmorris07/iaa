@@ -73,7 +73,7 @@
                 <h3>Admin Panel</h3>
                 <div class="row text-right">
                     <div class="col-lg-12">
-                        <p>Welcome, <?php echo $instructorName; ?></p>
+                        <p>Welcome, <?php echo $instructorName; $_SESSION["instructorName"] = $instructorName; ?></p>
                         <span><a href="login.php?logout=1"><button type="button" class="btn btn-default">Log Out</button></a></span></p>
                 </div>
             </div>

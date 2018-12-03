@@ -85,7 +85,7 @@
 
                                 if (mysqli_num_rows($result) > 0) {
                                     while($row = mysqli_fetch_assoc($result)) {
-                                        echo "<li>You completed the " . $row[quizName] . " assesment test.</li>";
+                                        echo "<li>You completed the " . $row['quizName'] . " assesment test.</li>";
                                     }
                                 } else {
                                     echo "No results found.";
@@ -119,10 +119,10 @@
 
                                 if (mysqli_num_rows($result) > 0) {
                                     while($row = mysqli_fetch_assoc($result)) {
-                                        $phone = $row[instructorPhone];
-                                        echo "<li><b>Name:</b> " . $row[instructorFirst] . " " .  $row[instructorLast] . "</li>";
+                                        $phone = $row['instructorPhone'];
+                                        echo "<li><b>Name:</b> " . $row['instructorFirst'] . " " .  $row['instructorLast'] . "</li>";
                                         echo "<li><b>Phone:</b> " . $phone . "</li>"; 
-                                        echo "<li><b>Email:</b> " . $row[instructorEmail] . "</li>";
+                                        echo "<li><b>Email:</b> " . $row['instructorEmail'] . "</li>";
                                     }
                                 } else {
                                     echo "No results found.";
@@ -139,7 +139,7 @@
                                              $result = mysqli_query($conn, $sql);
                                              if (mysqli_num_rows($result) > 0) {
                                                  while ($row = mysqli_fetch_assoc($result)) {
-                                                     echo $row[instructorEmail];
+                                                     echo $row['instructorEmail'];
                                                  }
                                              } else {
                                                  echo "No results found.";
@@ -165,7 +165,7 @@
                             $result = mysqli_query($conn, $sql);
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    echo "<li> <a href='" . $row[deptURL] . "' target='_blank'>CWI " . $row[quizName] . " Department Page </a></li>";
+                                    echo "<li> <a href='" . $row['deptURL'] . "' target='_blank'>CWI " . $row['quizName'] . " Department Page </a></li>";
                                 }
                             }
                             else {echo "No Results Found";}

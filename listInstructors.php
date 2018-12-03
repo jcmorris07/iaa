@@ -45,12 +45,14 @@
                 <th>Email</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody
+            <!-- added $button2 for Deletion of instructor/user --> 
     <?php
         if ($result = $conn->query("SELECT instructorID, instructorFirst, instructorLast, role, instructorPhone, instructorEmail FROM instructors;")) {
             while($row = $result->fetch_array(MYSQLI_NUM)) {
                 $button = sprintf('<a href="editInstructor.php?id=%s" type="button" class="btn btn-default">Edit</button>', $row[0]);
-                $tableRow = sprintf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $button);             
+                $button2 = sprintf('<a href="" type="button" class="btn btn-default">Delete</button>', $row[1]);
+                $tableRow = sprintf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>", $row[0], $row[1], $row[2], $row[3], $row[4], $row[5], $button, $button2);             
                 echo $tableRow;
             }
             $result->close();

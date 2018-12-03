@@ -13,7 +13,7 @@
 
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                echo "<title>" . $row[quizName] . " Assessment Quiz</title>";
+                echo "<title>" . $row['quizName'] . " Assessment Quiz</title>";
             }
         } else {
             echo "No results found.";
@@ -51,7 +51,7 @@
 
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo "<h3>" . $row[quizName] . " Assessment Quiz</h3>";
+                    echo "<h3>" . $row['quizName'] . " Assessment Quiz</h3>";
                 }
             } else {
                 echo "No results found.";
@@ -71,24 +71,24 @@
 
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
-                                if ($row[hasAnswer] == 0){
+                                if ($row['hasAnswer'] == 0){
                                     $sql3 = "SELECT answerContent, answerID
                                              FROM answers
-                                             WHERE questionID = " . $row[questionID];
+                                             WHERE questionID = " . $row['questionID'];
                                     $result3 = mysqli_query($conn, $sql3);
                                     
                                     echo "<h4>Question " . $i . "</h4>
-                                          <p>" . $row[questionContent] . "</p>";
+                                          <p>" . $row['questionContent'] . "</p>";
                                     // keep track of the questions id
-                                    echo "<input type='hidden' name='questionID-$i' value='{$row[questionID]}'>";
+                                    echo "<input type='hidden' name='questionID-$i' value='{$row['questionID']}'>";
                                     if (mysqli_num_rows($result3) > 0) {
                                         while($row = mysqli_fetch_assoc($result3)) {
                                             echo "<label>
                                                     <input type='radio' 
                                                             name='answer" . $i . "' 
-                                                            value='" . $row[answerID] . "'
+                                                            value='" . $row['answerID'] . "'
                                                             required >" . 
-                                                $row[answerContent] . 
+                                                $row['answerContent'] . 
                                                 "</label>";
                                         }
                                     } else {
@@ -97,21 +97,21 @@
                                 } else {
                                     $sql2 = "SELECT answerContent, answerID
                                      FROM answers
-                                     WHERE questionID = " . $row[questionID] . "
+                                     WHERE questionID = " . $row['questionID'] . "
                                      ORDER BY RAND()";
                                     $result2 = mysqli_query($conn, $sql2);
 
                                     echo "<h4>Question " . $i . "</h4>
-                                          <p>" . $row[questionContent] . "</p>";
+                                          <p>" . $row['questionContent'] . "</p>";
                                     // keep track of the questions id
-                                    echo "<input type='hidden' name='questionID-$i' value='{$row[questionID]}'>";
+                                    echo "<input type='hidden' name='questionID-$i' value='{$row['questionID']}'>";
                                     if (mysqli_num_rows($result2) > 0) {
                                         while($row = mysqli_fetch_assoc($result2)) {
                                             echo "<input type='radio' 
                                                             name='answer" . $i . "' 
-                                                            value='" . $row[answerID] . "'
+                                                            value='" . $row['answerID'] . "'
                                                             required >" . 
-                                                $row[answerContent] . 
+                                                $row['answerContent'] . 
                                                 "<br>";
                                         }
                                     } else {
@@ -127,10 +127,10 @@
                         ?>
                         <hr>
                         <h3>Your Information</h3>
-                        <input class="studentInfo" type="text" name="studentEmail" placeholder="Email" required> <span class="required"> *</span><br><br>
+                        <input class="studentInfo" type="text" name='studentEmail' placeholder="Email" required> <span class="required"> *</span><br><br>
                         <input class="studentInfo" type="text" name="studentFName" placeholder="First Name" required> <span class="required"> *</span><br><br>
                         <input class="studentInfo" type="text" name="studentLName" placeholder="Last name" required> <span class="required"> *</span><br><br>
-                        <input class="studentInfo" type="text" name="studentId" placeholder="Student ID">
+                        <input class="studentInfo" type="text" name="studentID" placeholder="Student ID">
 
                         <?php
                         echo "<input type='hidden' name='selectedQuizID' value='" . $selectedQuizId . "'>";

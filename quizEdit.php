@@ -97,7 +97,7 @@ if(!isset($_SESSION["user"])) header("location: login.php");
 							WHERE quizID = " . $quizID;
 				$resultDept = mysqli_query($conn, $sqlDept);
 				$rowDept = mysqli_fetch_assoc($resultDept);
-				$url = $rowDept[deptURL];
+				$url = $rowDept['deptURL'];
 							
 				echo "<form action='' method='post'>";
 				echo "<h4>Department URL</h4>";
@@ -105,9 +105,11 @@ if(!isset($_SESSION["user"])) header("location: login.php");
 				echo "<br /><br />
 						<input class='btn btn-default' name='updateURL' type='submit' value='Update'>";
 				
-				if ( $_GET['sid'] == 1 ){
+                                if(isset($_GET['sid']) && !empty($_GET['sid'])){
+                                    if ( $_GET['sid'] == 1 ){
 					echo "<p class='successMessage'>URL edited successfully.</p>";
-				}
+                                    }
+                                }
 						
 				echo "</form>";
 
@@ -115,25 +117,25 @@ if(!isset($_SESSION["user"])) header("location: login.php");
                     while ($row = mysqli_fetch_assoc($result)) {
                         $sql2 = "SELECT answerContent, answerID
                                      FROM answers
-                                     WHERE questionID = " . $row[questionID];
+                                     WHERE questionID = " . $row['questionID'];
                         $result2 = mysqli_query($conn, $sql2);
 
                         echo "<form action='' method='post'>";
 
                         echo "<h4>Question " . $i . "</h4>
                                     <div  style='padding-left: 3%;'>
-									<p class='quizEditInput'><strong>" . $row[questionContent] . "</strong></p>";
+									<p class='quizEditInput'><strong>" . $row['questionContent'] . "</strong></p>";
                         echo "<br>";
                         if (mysqli_num_rows($result2) > 0) {
                             while($row2 = mysqli_fetch_assoc($result2)) {
-                                echo "<p class='quizEditInput'> - " . $row2[answerContent] ."</p>";
+                                // echo "<p class='quizEditInput'> - " . $row2['answer Content'] ."</p>";
                             }
                         } else {
                             echo "No results found.";
                         }
 						//Gave the button a data attribute for questionID
-                        echo "</div><input class='btn btn-default quizUpdateButton' name='update" . $row[questionID] . "' type='submit' value='Edit Question' 
-						data-eqid='".$row[questionID]."'  data-qid='$quizID'";
+                        echo "</div><input class='btn btn-default quizUpdateButton' name='update" . $row['questionID'] . "' type='submit' value='Edit Question' 
+						data-eqid='".$row['questionID']."'  data-qid='$quizID'";
                         echo "</form> <br /> <br />";
                         ++$i;
                     }

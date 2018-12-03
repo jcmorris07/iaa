@@ -4,7 +4,7 @@
         <?php 
         if(isset($_POST['login'])) {
             $userName = htmlspecialchars($_POST["instructorEmail"]);
-            $password = htmlspecialchars($_POST["password"]);
+            $password = htmlspecialchars($_POST["password"]);  //$hashed_password = password_hash($password, PASSWORD_DEFAULT);   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 			
             $sql = "SELECT * 
                     FROM instructors 
@@ -29,6 +29,7 @@
 		if(isset($_GET['logout'])) {
 			session_start(); 
 			$_SESSION["user"] = NULL;
+                        $_SESSION["instructorName"] = NULL;
 			$err_msg = "Logged Out.";
 		}
         ?>
@@ -69,7 +70,7 @@
                         <div class="checkbox">
 
                         </div>
-						<p class="err"><?php echo $err_msg; ?></p>
+                                                <p class="err"><?php if(isset($err_msg) && !empty($err_msg)){echo $err_msg;} ?></p>  
                         <input class="btn btn-lg btn-primary btn-block" name="login" type="submit" value="Sign in">
                     </form>
 

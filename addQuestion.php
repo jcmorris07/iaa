@@ -100,7 +100,7 @@ if(!isset($_SESSION["user"])) header("location: login.php");
 
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                if($questionContent == $row[questionContent]) {
+                if($questionContent == $row['questionContent']) {
                     $duplicate = true;
                 } else {
                 }
@@ -135,7 +135,7 @@ if(!isset($_SESSION["user"])) header("location: login.php");
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    $questionID = $row[questionID];
+                    $questionID = $row['questionID'];
                 }
             }
 
@@ -150,7 +150,7 @@ if(!isset($_SESSION["user"])) header("location: login.php");
             for ($i = 1; $i <= 3; $i++) {
                 $sql = "INSERT INTO answers
                         VALUES
-                        (null, '$questionID', 0, '${answerContent.$i}')";
+                        (null, '$questionID', 0, '${'answerContent'.$i}')";
 
                 $result = mysqli_query($conn, $sql);
             }

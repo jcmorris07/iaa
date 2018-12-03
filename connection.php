@@ -1,5 +1,5 @@
 <?php
-            $serverName = "172.22.0.12";
+            $serverName = "172.22.4.104";
             $userName = "iaa_user";
             $passWord = 'Fall2018.';
             $dbName = "iaa";

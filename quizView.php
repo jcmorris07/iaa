@@ -48,7 +48,7 @@
                 <h3>Admin Panel</h3>
                 <div class="row text-right">
                     <div class="col-lg-12">
-                        <p><?php echo $instructorName; ?></p>
+                        <p>Welcome, <?php echo $_SESSION["instructorName"]; ?></p>
 						<p>
 							<a href="admin.php"><button type="button" class="btn btn-default">Go Back</button></a>
 							<span><a href="login.php?logout=1"><button type="button" class="btn btn-default">Log Out</button></a></span>
@@ -131,14 +131,13 @@
             </table>
         </div> <!-- quizResults -->
 
+
         <div class="row" id="yourQuiz">
             <div class="col-lg-12">
-                <h4><?php echo $quizName ?></h4>
+                <h4></h4>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                       
-
-            </div>
+        </div>
         </div><!--Your Quiz Row -->
         </div> <!-- container -->
 		

@@ -102,7 +102,7 @@ if(!isset($_SESSION["user"])) header("location: login.php");
 							echo "<h5>Correct Answer</h5>";
 							if (mysqli_num_rows($result2) > 0) {
                             	while($row2 = mysqli_fetch_assoc($result2)) {
-                                	echo "<input class='quizEditInput' type='text' name='answerID" . $row2[answerID] . "' value='" . $row2[answerContent] . "'><br>";
+                                	echo "<input class='quizEditInput' type='text' name='answerID" . $row2['answerID'] . "' value='" . $row2['answerContent'] . "'><br>";
                             	}
 							}
 							$sql3 = "SELECT answerContent, answerID
@@ -112,7 +112,7 @@ if(!isset($_SESSION["user"])) header("location: login.php");
 							echo "<h5>Detractor Answers</h5>";
 							if (mysqli_num_rows($result3) > 0) {
                             	while($row3 = mysqli_fetch_assoc($result3)) {
-                                	echo "<input class='quizEditInput' type='text' name='answerID" . $row3[answerID] . "' value='" . $row3[answerContent] . "'><br>";
+                                	echo "<input class='quizEditInput' type='text' name='answerID" . $row3['answerID'] . "' value='" . $row3['answerContent'] . "'><br>";
                             	}
 							}
 						
@@ -129,10 +129,12 @@ if(!isset($_SESSION["user"])) header("location: login.php");
 						echo"</form>";							
 						?>
                         <!-- Added this in for a confirmation message -->
-						<?php
-                            if ( $_GET['sid'] == 1 ){
+			<?php
+                            if(isset($_GET['sid']) && !empty($_GET['sid'])){
+                                if ( $_GET['sid'] == 1 ){
                                 echo "<p class='successMessage'>Question edited successfully.</p>";
-							}
+				}
+                            }
                         ?>
                         
 						</div>
